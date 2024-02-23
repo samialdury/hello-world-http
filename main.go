@@ -8,6 +8,10 @@ import (
 	"os"
 )
 
+var (
+	VersionSHA = "unknown-sha"
+)
+
 func main() {
 	mux := http.NewServeMux()
 
