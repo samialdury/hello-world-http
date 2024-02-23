@@ -19,6 +19,7 @@ func main() {
 		slog.Info("Incoming request", "method", r.Method, "host", r.Host, "path", r.URL.Path)
 
 		res := Response{
+			VersionSHA:    VersionSHA,
 			RemoteAddr:    r.RemoteAddr,
 			XRealIP:       r.Header.Get("X-Real-Ip"),
 			XForwardedFor: r.Header.Get("X-Forwarded-For"),
@@ -35,6 +36,7 @@ func main() {
 }
 
 type Response struct {
+	VersionSHA    string `json:"version_sha"`
 	RemoteAddr    string `json:"remote_addr"`
 	XRealIP       string `json:"x_real_ip"`
 	XForwardedFor string `json:"x_forwarded_for"`
