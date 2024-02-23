@@ -13,8 +13,6 @@ WORKDIR ${WORK_DIR}
 
 COPY go.mod ./
 
-RUN go mod download
-
 COPY main.go ./
 
 RUN CGO_ENABLED=0 GOOS=linux \ 
